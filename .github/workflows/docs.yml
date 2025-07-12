@@ -1,0 +1,21 @@
+name: 📚 Documentation Workflow
+
+on:
+  push:
+    branches: [main, draft]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-docs:
+    name: 📖 Build Documentation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        
+      - name: 📚 Build & Deploy Docs
+        run: |
+          echo "Building documentation..."
+          # Add your documentation build commands
