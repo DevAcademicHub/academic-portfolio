@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, draft]
   pull_request:
-    branches: [main]
+    branches: [main, draft]
 
 jobs:
   build-docs:
