@@ -1,0 +1,20 @@
+{
+  "name": "academic-portfolio",
+  "version": "1.0.0",
+  "description": "documentation repository for DevAcademicHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"Add your linting command here\"",
+    "format": "echo \"Add your formatting command here\"",
+    "dev": "echo \"Add your development server command here\"",
+    "build": "echo \"Add your build command here\"",
+    "start": "echo \"Add your start command here\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevAcademicHub/academic-portfolio.git"
+  },
+  "author": "Solo Entrepreneur",
+  "license": "MIT"
+}
