@@ -1,68 +1,36 @@
-def get_user_input():
-    """Get a number from user input with validation"""
-    try:
-        num = int(input("Enter 1 number: "))
-        return num
-    except ValueError:
-        print("Invalid input. Please enter a numeric value.")
-        return get_user_input()  # Recursive call for re-input
-
-def process_number(num):
-    """Process the number based on its value"""
-    if num <= 0:
-        return ""
+# 6.1 Return values
+def compare_numbers(x, y):
+    """Return -1 if x < y, 0 if x == y, and 1 if x > y."""
+    if x > y:
+        return 1
+    elif x == y:
+        return 0
     else:
-        result = process_number(num - 1)
-        return f"sexy\n{result}".rstrip()
+        return -1
 
-def main():
-    """Main function to run the program"""
-    num = get_user_input()
-    result = process_number(num)
-    print(result)
+compare_numbers(5, 3)  # Returns 1
 
-if __name__ == "__main__":
-    main()
+# 6.2 Incremental development
+"""As an exercise, use incremental development to write a function called hypotenuse that
+returns the length of the hypotenuse of a right triangle given the lengths of the other two
+legs as arguments. Record each stage of the development process as you go."""
+import math
+def hypotenuse(a, b):
+    """Return the length of the hypotenuse of a right triangle."""
+    # Stage 1: Calculate the square of the legs
+    a_squared = a ** 2
+    b_squared = b ** 2
+    
+    # Stage 2: Sum the squares
+    sum_of_squares = a_squared + b_squared
+    # Stage 3: Calculate the square root of the sum
+    return math.sqrt(sum_of_squares)
+hypotenuse(3, 4)  # Returns 5.0
 
-# Example: Fixed Business Rules with Class Implementation
-class NumberProcessor:
-    def __init__(self):
-        self.message = "sexy"  # Can be customized
 
-    def get_user_input(self):
-        """Get a number from user input with validation"""
-        try:
-            num = int(input("Enter 1 number: "))
-            return num
-        except ValueError:
-            print("Invalid input. Please enter a numeric value.")
-            return self.get_user_input()  # Recursive call for re-input
+#6.4 Boolean functions
+def is_between(x, y, z):
+    """Return True if x <= y <= z, False otherwise."""
+    return (x <= y <= z)
 
-    def process_number(self, num):
-        """Process the number based on its value"""
-        if num <= 0:
-            return ""
-        else:
-            result = self.process_number(num - 1)
-            return f"{self.message}\n{result}".rstrip()
-
-    def run(self):
-        """Main method to run the program"""
-        num = self.get_user_input()
-        result = self.process_number(num)
-        if result:
-            print(result)
-
-# Usage
-if __name__ == "__main__":
-    processor = NumberProcessor()
-    processor.run()
-
-processor1 = NumberProcessor()
-processor1.message = "Kiss you"
-
-processor2 = NumberProcessor()
-processor2.message = "Hello"
-
-processor1.run()  # Prints "Kiss you" n times
-processor2.run()  # Prints "Hello" n times
+is_between(1, 2, 3)  # Returns True
