@@ -9,7 +9,17 @@ def hypotenuse(a, b):
 result = hypotenuse(3, 4)  # Returns 0.0
 print(f"Phase1: Initial Function Setup: {result}")  # Output: phase1: 0.0
 
-# Phase2: Add Input Processing
+# Phase2: Input validation (NEW)
+def hypotenuse(a, b):
+    if a < 0 or b < 0:
+        return -1  # Error indicator
+    return 0.0
+# Test
+result = hypotenuse(-3, 4) # Returns -1 for invalid input
+print(f"Phase2: Input Validation: {result}") # Output: phase2: -1
+
+
+# Phase3: Add Input Processing
 def hypotenuse(a, b):
     a_squared = a ** 2
     b_squared = b ** 2
@@ -21,7 +31,7 @@ def hypotenuse(a, b):
 result = hypotenuse(3, 4)  # Returns 0.0
 print(f"Phase2: Add Input Processing: {result}")  # Output: phase2: 0.0
 
-# Phase3: Add Sum of Squares Calculation
+# Phase4: Add Sum of Squares Calculation
 def hypotenuse(a, b):
     a_squared = a ** 2
     b_squared = b ** 2
@@ -33,7 +43,7 @@ def hypotenuse(a, b):
 result = hypotenuse(3, 4)  # Returns 0.0
 print(f"Phase3: Add Sum of Squares Calculation: {result}")  # Output: phase3: 0.0
 
-# Phase4: Add Square Root Calculation
+# Phase5: Add Square Root Calculation
 def hypotenuse(a, b):
     a_squared = a ** 2
     b_squared = b ** 2
@@ -46,7 +56,7 @@ def hypotenuse(a, b):
 result = hypotenuse(3, 4)  # Returns 5.0
 print(f"Phase4: Add Square Root Calculation: {result}")  # Output: phase4: 5.0
 
-# Phase5: Clean Final Version
+# Phase6: Clean Final Version
 def hypotenuse(a, b):
     """Return the length of the hypotenuse of a right triangle."""
     a_squared = a ** 2
