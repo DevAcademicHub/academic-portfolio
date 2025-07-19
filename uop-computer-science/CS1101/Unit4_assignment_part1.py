@@ -11,16 +11,25 @@ print(f"Phase1: Initial Function Setup: {result}")  # Output: phase1: 0.0
 
 # Phase2: Input validation (NEW)
 def hypotenuse(a, b):
-    if a < 0 or b < 0:
-        return -1  # Error indicator
+    if a <= 0 or b <= 0:
+        raise ValueError("Side lengths must be non-negative")
     return 0.0
+
 # Test
-result = hypotenuse(-3, 4) # Returns -1 for invalid input
-print(f"Phase2: Input Validation: {result}") # Output: phase2: -1
+result = hypotenuse(-3, 4) # Raises ValueError
+print(f"Phase2: Input Validation: {result}") # Output: phase2: ValueError
+result = hypotenuse(0, 4) # Raises ValueError
+print(f"Phase2: Input Validation: {result}") # Output: phase2: ValueError
+result = hypotenuse(0, -4) # Raises ValueError
+print(f"Phase2: Input Validation: {result}") # Output: phase2: ValueError
 
 
 # Phase3: Add Input Processing
 def hypotenuse(a, b):
+    # Input validation
+    if a <= 0 or b <= 0:
+        raise ValueError("Side lengths must be non-negative")
+
     a_squared = a ** 2
     b_squared = b ** 2
     print(f"a_squared: {a_squared}") # Output: a_squared: 9
@@ -33,6 +42,10 @@ print(f"Phase2: Add Input Processing: {result}")  # Output: phase2: 0.0
 
 # Phase4: Add Sum of Squares Calculation
 def hypotenuse(a, b):
+    # Input validation
+    if a <= 0 or b <= 0:
+        raise ValueError("Side lengths must be non-negative")
+
     a_squared = a ** 2
     b_squared = b ** 2
     sum_of_squares = a_squared + b_squared
@@ -45,6 +58,10 @@ print(f"Phase3: Add Sum of Squares Calculation: {result}")  # Output: phase3: 0.
 
 # Phase5: Add Square Root Calculation
 def hypotenuse(a, b):
+    # Input validation
+    if a <= 0 or b <= 0:
+        raise ValueError("Side lengths must be non-negative")
+
     a_squared = a ** 2
     b_squared = b ** 2
     sum_of_squares = a_squared + b_squared
@@ -59,6 +76,10 @@ print(f"Phase4: Add Square Root Calculation: {result}")  # Output: phase4: 5.0
 # Phase6: Clean Final Version
 def hypotenuse(a, b):
     """Return the length of the hypotenuse of a right triangle."""
+    # Input validation
+    if a <= 0 or b <= 0:
+        raise ValueError("Side lengths must be non-negative")
+
     a_squared = a ** 2
     b_squared = b ** 2
     sum_of_squares = a_squared + b_squared
@@ -74,10 +95,15 @@ print(f"Required Test 2: {hypotenuse(8, 6)}") # Output: Required Test 2: 10.0
 
 # def hypotenuse(a, b):
 #     """Return the length of the hypotenuse of a right triangle."""
+
+#     # Input validation
+#     if a <= 0 or b <= 0:
+#         raise ValueError("Side lengths must be non-negative")
+
 #     # Stage 1: Calculate the square of the legs
 #     a_squared = a ** 2
 #     b_squared = b ** 2
-    
+
 #     # Stage 2: Sum the squares
 #     sum_of_squares = a_squared + b_squared
 #     # Stage 3: Calculate the square root of the sum
