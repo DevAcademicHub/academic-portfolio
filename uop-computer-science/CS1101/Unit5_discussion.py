@@ -68,6 +68,10 @@ print(any_lowercase4("Hello")) # Output: True (correct result)
 # Why?
 # The function accumulates the results of checking each character using the `or` operator,
 # so it returns True if at least one character is lowercase.
+print(f"example 4: {any_lowercase4('HELLO')}") # Output: False (correct result)
+
+assert any_lowercase4("HELLO") == False, "Expected False for all uppercase input"
+# The function correctly returns False for a string with all uppercase characters.
 
 # 5
 
@@ -84,3 +88,19 @@ print(any_lowercase5("Hello"))  # Output: False (incorrect result)
 # Why?
 # The function stops checking after the first uppercase character, so it does not consider
 # the case where there are lowercase characters present in the string.
+
+# reply to my peer's question: the case of using while loop instead of for loop
+# Using a while loop instead of a for loop would not change the logic of the function,
+# but it would require additional code to manage the index manually.
+def any_lowercase4_while(s):
+     flag = False
+     i = 0
+     while i < len(s):
+          flag = flag or s[i].islower()
+          i += 1
+     return flag
+
+print(any_lowercase4_while("Hello")) # Output: True (correct result)
+# This will return True, which is correct
+# The while loop version behaves the same as the for loop version,
+# checking each character and returning True if any character is lowercase.

@@ -70,3 +70,17 @@ tests = [
 for pwd, expected in tests:
     result = check_password(pwd)
     print(f"  {pwd}: {result} {'✓' if result == expected else '✗'}")
+
+# Phase 5: improve readability
+# Goal: Use descriptive variable names and comments
+# This enhances maintainability and makes the code self-documenting
+def check_password(password):
+    """Check if password meets all security requirements."""
+    if len(password) < 8:
+        return False  # Password too short
+    has_upper = any(c.isupper() for c in password)  # Check for uppercase letters
+    has_lower = any(c.islower() for c in password)  # Check for lowercase letters
+    has_digit = any(c.isdigit() for c in password)  # Check for digits
+    has_special = any(c in string.punctuation for c in password)  # Check for special characters
+    
+    return has_upper and has_lower and has_digit and has_special
