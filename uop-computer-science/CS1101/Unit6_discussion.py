@@ -41,10 +41,3 @@ print("New mom's list: ", mom_list)
 This code demonstrates how to manipulate lists in Python, including adding and removing items.
 It shows how to use methods like append, remove, and pop, and how these methods affect the list.
 """
-def impaluse_buy
-    grocery_list.append(item)
-    print(f"Added {item} to the grocery list: {grocery_list}")
-    
-def buy_groceries(grocery_list, item):
-    grocery_list.append(item)
-    print(f"Added {item} to the grocery list: {grocery_list}")
