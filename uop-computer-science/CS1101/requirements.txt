@@ -1,0 +1,3 @@
+# Core dependencies for CS1101 coursework
+pytest==7.1.1          # For running unit tests
+pytest-cov==3.0.0      # For test coverage reporting
