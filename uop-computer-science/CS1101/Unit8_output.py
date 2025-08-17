@@ -1,0 +1,1 @@
+inverted_fruits = {'red': ['apple', 'cherry'], 'yellow': ['banana', 'mango'], 'black': ['grapes'], 'green': ['grapes']}
